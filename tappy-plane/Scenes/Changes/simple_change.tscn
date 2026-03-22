@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cslg7jmqjksky"]
+
+[ext_resource type="Texture2D" uid="uid://c31f78wg2mt14" path="res://Assets/background/sky.png" id="1_xide6"]
+[ext_resource type="Script" uid="uid://cby6xk8p4ftcs" path="res://Scenes/Changes/simple_change.gd" id="1_xvl2b"]
+[ext_resource type="FontFile" uid="uid://csh6mrpsh5ngw" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="2_3qm1h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvl2b"]
+font = ExtResource("2_3qm1h")
+font_size = 64
+font_color = Color(1, 0.38431373, 0.41568628, 1)
+outline_size = 21
+
+[node name="SimpleChange" type="Control" unique_id=1545199541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xvl2b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=896097243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xide6")
+expand_mode = 1
+
+[node name="title_label" type="Label" parent="." unique_id=318514397]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.5
+offset_top = -98.5
+offset_right = 138.5
+offset_bottom = 98.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_xvl2b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1746810630]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
