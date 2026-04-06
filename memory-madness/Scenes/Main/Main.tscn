@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://c2gt4q4ev7wj1" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="1_p8rbg"]
 [ext_resource type="PackedScene" uid="uid://bbi6hton1rsj" path="res://Scenes/LevelButton/LevelButton.tscn" id="2_cmk6n"]
 [ext_resource type="PackedScene" uid="uid://swrxhxtxym3y" path="res://Scenes/Sprite/FrontSprite.tscn" id="3_i3fi7"]
+[ext_resource type="Script" uid="uid://b3prtmlf3yvu" path="res://Classes/LevelSetting.gd" id="3_o8wgc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qtv3y"]
 font = ExtResource("1_p8rbg")
@@ -10,6 +11,36 @@ font_size = 84
 font_color = Color(0.96750814, 0.8838209, 0.9536727, 1)
 outline_size = 11
 outline_color = Color(0.999896, 0.43491426, 0.3662508, 1)
+
+[sub_resource type="Resource" id="Resource_w20t6"]
+script = ExtResource("3_o8wgc")
+row = 3
+col = 4
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_i3fi7"]
+script = ExtResource("3_o8wgc")
+row = 4
+col = 4
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_o8wgc"]
+script = ExtResource("3_o8wgc")
+row = 4
+col = 6
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_aw1lf"]
+script = ExtResource("3_o8wgc")
+row = 5
+col = 6
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
+
+[sub_resource type="Resource" id="Resource_5s61s"]
+script = ExtResource("3_o8wgc")
+row = 6
+col = 7
+metadata/_custom_type_script = "uid://b3prtmlf3yvu"
 
 [node name="Main" type="Control" unique_id=400733287]
 layout_mode = 3
@@ -61,18 +92,23 @@ layout_mode = 2
 
 [node name="LevelButton2" parent="VBoxContainer/HBoxLevelButton" unique_id=1885723930 instance=ExtResource("2_cmk6n")]
 layout_mode = 2
+level_setting = SubResource("Resource_w20t6")
 
 [node name="LevelButton3" parent="VBoxContainer/HBoxLevelButton" unique_id=739583182 instance=ExtResource("2_cmk6n")]
 layout_mode = 2
+level_setting = SubResource("Resource_i3fi7")
 
 [node name="LevelButton4" parent="VBoxContainer/HBoxLevelButton" unique_id=1559429766 instance=ExtResource("2_cmk6n")]
 layout_mode = 2
+level_setting = SubResource("Resource_o8wgc")
 
 [node name="LevelButton5" parent="VBoxContainer/HBoxLevelButton" unique_id=1508346479 instance=ExtResource("2_cmk6n")]
 layout_mode = 2
+level_setting = SubResource("Resource_aw1lf")
 
 [node name="LevelButton6" parent="VBoxContainer/HBoxLevelButton" unique_id=617355777 instance=ExtResource("2_cmk6n")]
 layout_mode = 2
+level_setting = SubResource("Resource_5s61s")
 
 [node name="HBoxFrontSprite" type="HBoxContainer" parent="VBoxContainer" unique_id=1570602762]
 layout_mode = 2
