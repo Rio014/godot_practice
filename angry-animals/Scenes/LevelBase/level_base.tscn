@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cdelf7xb377e5"]
+
+[ext_resource type="Texture2D" uid="uid://d0h8tl5wxu6iu" path="res://Assets/scene/colored_castle.png" id="1_fe7a1"]
+[ext_resource type="Script" uid="uid://db8qvmqd4o8ni" path="res://Scenes/LevelBase/level_base.gd" id="1_fu0cx"]
+[ext_resource type="PackedScene" uid="uid://uidfsm6s7nw4" path="res://Scenes/Water/water.tscn" id="3_2wk6i"]
+[ext_resource type="PackedScene" uid="uid://cifoo1y3iqhib" path="res://Scenes/GameUI/game_ui.tscn" id="5_kkf17"]
+
+[node name="LevelBase" type="Node" unique_id=1588477584]
+script = ExtResource("1_fu0cx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1395105400]
+position = Vector2(-126, -324)
+scale = Vector2(1.305, 1.305)
+texture = ExtResource("1_fe7a1")
+centered = false
+
+[node name="Water" parent="." unique_id=2031474533 instance=ExtResource("3_2wk6i")]
+z_index = 10
+position = Vector2(570, 583)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=864058525]
+position = Vector2(89, 288)
+
+[node name="GameUI" parent="." unique_id=63388245 instance=ExtResource("5_kkf17")]

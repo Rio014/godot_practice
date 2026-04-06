@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cifoo1y3iqhib"]
+
+[ext_resource type="LabelSettings" uid="uid://da51kbn4fjgth" path="res://Resources/UI_red.tres" id="1_s3w5c"]
+[ext_resource type="Script" uid="uid://dtufalbe6teuj" path="res://Scenes/GameUI/game_ui.gd" id="1_smc31"]
+[ext_resource type="FontFile" uid="uid://de6l4ame7505i" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="2_mjubw"]
+[ext_resource type="AudioStream" uid="uid://jvg4j101h1ch" path="res://Assets/audio/jazzyfrenchy.mp3" id="4_0u7gi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_smc31"]
+font = ExtResource("2_mjubw")
+font_size = 96
+font_color = Color(0.5240859, 0.8505661, 0.99999994, 1)
+outline_size = 16
+outline_color = Color(0, 0.24313726, 0.84313726, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjubw"]
+font = ExtResource("2_mjubw")
+font_size = 64
+font_color = Color(0.85978645, 0.80130583, 0.6124842, 1)
+outline_size = 16
+outline_color = Color(0.3560542, 0.3466878, 0.21125966, 1)
+
+[node name="GameUI" type="Control" unique_id=63388245]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_smc31")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=398760981]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2078026264]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=968405607]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1317469248]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level"
+label_settings = ExtResource("1_s3w5c")
+
+[node name="LevelNum" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1707105065]
+layout_mode = 2
+text = "999"
+label_settings = ExtResource("1_s3w5c")
+
+[node name="AttemptHBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1015670776]
+layout_mode = 2
+
+[node name="AttemptLabel" type="Label" parent="MarginContainer/VBoxContainer/AttemptHBoxContainer" unique_id=865333819]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attempt"
+label_settings = ExtResource("1_s3w5c")
+
+[node name="AttemptNum" type="Label" parent="MarginContainer/VBoxContainer/AttemptHBoxContainer" unique_id=914027726]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("1_s3w5c")
+
+[node name="VBoxComplete" type="VBoxContainer" parent="." unique_id=795988564]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -58.0
+offset_right = 228.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelCompleteLabel" type="Label" parent="VBoxComplete" unique_id=1982037695]
+layout_mode = 2
+text = "Level Complete"
+label_settings = SubResource("LabelSettings_smc31")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressEscapeLabel" type="Label" parent="VBoxComplete" unique_id=758219383]
+layout_mode = 2
+text = "Press Escape"
+label_settings = SubResource("LabelSettings_mjubw")
+horizontal_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=798911122]
+stream = ExtResource("4_0u7gi")
+parameters/looping = true
