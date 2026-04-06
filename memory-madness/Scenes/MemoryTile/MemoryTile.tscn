@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cql5xay1b52lu"]
 
 [ext_resource type="Texture2D" uid="uid://uxopsjhnkjuk" path="res://Assets/frames/hidden_frame_blank.png" id="1_dtpqw"]
+[ext_resource type="Script" uid="uid://cw8uili1ddyb8" path="res://Scenes/MemoryTile/memory_tile.gd" id="2_axhco"]
 
 [node name="MemoryTile" type="TextureButton" unique_id=850905116]
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_dtpqw")
+script = ExtResource("2_axhco")
