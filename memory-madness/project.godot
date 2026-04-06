@@ -11,8 +11,24 @@ config_version=5
 [application]
 
 config/name="MemoryMadness"
+run/main_scene="uid://d4jyqyarq3h8w"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ImageManager="*uid://b71hd4yn7xp8v"
+SignalHub="*uid://csediv5ys1cwe"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
+window/stretch/mode="canvas_items"
+
+[editor]
+
+naming/scene_name_casing=1
 
 [physics]
 
