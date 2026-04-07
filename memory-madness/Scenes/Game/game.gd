@@ -10,6 +10,8 @@ func _ready() -> void:
 	# connected to signal
 	SignalHub.on_level_selected.connect(on_level_selected)
 	
+	
+	
 
 func on_level_selected(level_setting: LevelSetting) -> void:
 	print("level selected: %s" % [str(level_setting)])

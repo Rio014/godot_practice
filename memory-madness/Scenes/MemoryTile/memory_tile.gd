@@ -5,6 +5,7 @@ class_name MemoryTile
 @onready var frame_image: TextureRect = $FrameImage
 @onready var item_image: TextureRect = $ItemImage
 
+
 func _ready() -> void:
 	reveal(false)
 
@@ -19,4 +20,7 @@ func reveal(is_reveal: bool) -> void:
 	
 
 func _on_pressed() -> void:
-	reveal(true)
+	if Scorer.SelectionEnabled:
+		reveal(true)
+	SignalHub.on_tile_selected.emit(self)
+	

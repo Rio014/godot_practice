@@ -14,6 +14,10 @@ func _ready() -> void:
 	show_game(false)
 
 func on_level_selected(level_setting: LevelSetting) -> void:
+	# need this when we exit before the game finish and get back in
+	# in some cases, the SelectionEnabled is not yet enable to true for the new game
+	Scorer.SelectionEnabled = true 
+	
 	show_game(true)
 	
 func show_game(is_show: bool) -> void:
