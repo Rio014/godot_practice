@@ -6,6 +6,10 @@ class_name Scorer
 # not an individual node (that we have to instantiate before use it)
 static var SelectionEnabled: bool = true
 var selected_tiles: Array[MemoryTile] = []
+var pairs_made: int = 0 
+var target_pairs: int = 99
+
+var num_moves_made: int = 0
 
 @onready var reveal_timer: Timer = $RevealTimer
 
@@ -14,7 +18,14 @@ var selected_tiles: Array[MemoryTile] = []
 func _ready() -> void:
 	SignalHub.on_tile_selected.connect(on_tile_selected)
 	SignalHub.on_game_exit_pressed.connect(on_game_exit_pressed)
-
+	
+	
+func clear_new_game() -> void:
+	# reset score to 0 everytime we start the game
+	pairs_made = 0
+	num_moves_made = 0
+	SelectionEnabled = true
+	selected_tiles.clear() 
 
 func on_tile_selected(tile: MemoryTile) -> void:
 	if tile in selected_tiles:
@@ -32,6 +43,17 @@ func process_pair() -> void:
 
 	SelectionEnabled = false
 	reveal_timer.start()
+	check_for_pair()
+
+func check_for_pair() -> void:
+	num_moves_made += 1
+	if selected_tiles[0].matches_other_tile(selected_tiles[1]):
+		selected_tiles[0].kill_on_pair()
+		selected_tiles[1].kill_on_pair()
+		pairs_made += 1
+
+func get_pair_str() -> String:
+	return "%d/%d" % [pairs_made, target_pairs]
 
 
 func _on_reveal_timer_timeout() -> void:
@@ -44,6 +66,8 @@ func _on_reveal_timer_timeout() -> void:
 	# clear tile selection and reenable the selection
 	SelectionEnabled = true
 	selected_tiles.clear()  # clear the array
+	
+	
 	
 	
 func on_game_exit_pressed() -> void:

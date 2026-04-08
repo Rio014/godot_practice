@@ -2,7 +2,11 @@ extends Control
 
 const MEMORY_TILE = preload("res://Scenes/MemoryTile/MemoryTile.tscn")
 
+@onready var scorer: Scorer = $Scorer
 @onready var grid_container: GridContainer = $HBoxContainer/GridContainer
+
+@onready var pairs_num: Label = $HBoxContainer/VBoxUI/HBoxPairs/PairsNum
+@onready var moves_num: Label = $HBoxContainer/VBoxUI/HBoxMoves/MovesNum
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,11 +15,14 @@ func _ready() -> void:
 	SignalHub.on_level_selected.connect(on_level_selected)
 	
 	
+func _process(_delta: float) -> void:
+	pairs_num.text = scorer.get_pair_str()
+	moves_num.text = "%03d" % [scorer.num_moves_made]
 	
 
 func on_level_selected(level_setting: LevelSetting) -> void:
 	print("level selected: %s" % [str(level_setting)])
-	
+	scorer.clear_new_game()
 	# get images for the game
 	var level_data_selector: LevelDataSelector = LevelDataSelector.new()
 	var selected_images: Array[Texture2D] = level_data_selector.get_images_for_level(level_setting)
@@ -23,7 +30,8 @@ func on_level_selected(level_setting: LevelSetting) -> void:
 	
 	create_tile(level_setting, selected_images, selected_frame)
 		
-		
+	# set label based on the level selected
+	scorer.target_pairs = level_setting.target_pairs
 	
 
 
