@@ -1,6 +1,7 @@
 extends TextureRect
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_random_item_image()
@@ -26,6 +27,7 @@ func run_me() -> void:
 	tween.tween_interval(0.05)
 	tween.tween_callback(run_me)
 	
+
 	
 	
 	

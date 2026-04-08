@@ -32,9 +32,14 @@ func matches_other_tile(other_tile: MemoryTile) -> bool:
 		
 func kill_on_pair() -> void:
 	disabled = true # disable the tile so that it can't be clicked
-	modulate = Color.TRANSPARENT
-	
-	
-	
+	#modulate = Color.TRANSPARENT
+	z_index = 10
+	var tween: Tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "rotation_degrees", 720, 0.5)
+	tween.tween_property(self, "scale", Vector2(0.5,0.5), 0.5)
+	tween.set_parallel(false)
+	tween.tween_interval(0.5)
+	tween.tween_property(self, "modulate", Color.TRANSPARENT, 0.2)
 	
 	

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://calhgngfctiie"]
 
 [ext_resource type="FontFile" uid="uid://c2gt4q4ev7wj1" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="1_c7rk1"]
+[ext_resource type="Script" uid="uid://ne7ds20dfe5o" path="res://Scenes/GameOverUI/game_over_ui.gd" id="1_eeca3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7rk1"]
 content_margin_left = 24.0
@@ -31,6 +32,7 @@ outline_color = Color(0.26960486, 0.45163333, 0.86602193, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_c7rk1")
+script = ExtResource("1_eeca3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1897638617]
 layout_mode = 2

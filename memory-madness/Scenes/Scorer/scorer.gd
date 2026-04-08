@@ -12,6 +12,7 @@ var target_pairs: int = 99
 var num_moves_made: int = 0
 
 @onready var reveal_timer: Timer = $RevealTimer
+@onready var game_over_ui: PanelContainer = $"../MarginContainer/GameOverUI"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +27,7 @@ func clear_new_game() -> void:
 	num_moves_made = 0
 	SelectionEnabled = true
 	selected_tiles.clear() 
+	game_over_ui.hide()
 
 func on_tile_selected(tile: MemoryTile) -> void:
 	if tile in selected_tiles:
@@ -64,10 +66,19 @@ func _on_reveal_timer_timeout() -> void:
 			tile.reveal(false)
 	
 	# clear tile selection and reenable the selection
-	SelectionEnabled = true
+	check_game_over()
+	#SelectionEnabled = true
 	selected_tiles.clear()  # clear the array
+
 	
-	
+func check_game_over() -> void:
+	if pairs_made == target_pairs:
+		print("Game Over!")
+		SignalHub.emit_on_game_over(num_moves_made)
+		SelectionEnabled = false
+		game_over_ui.show()
+	else:
+		SelectionEnabled = true
 	
 	
 func on_game_exit_pressed() -> void:
