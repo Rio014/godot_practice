@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dfw1l1lyui3h6" path="res://Scenes/Player/Player.tscn" id="2_bgw71"]
 [ext_resource type="PackedScene" uid="uid://ca3u1aek8kn7l" path="res://Scenes/Enemies/Snail/Snail.tscn" id="3_78m1b"]
 [ext_resource type="PackedScene" uid="uid://fgipdhfkjbad" path="res://Scenes/Enemies/Frog/Frog.tscn" id="4_3lxj6"]
+[ext_resource type="PackedScene" uid="uid://fu1pmnchjylr" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="5_lmtt4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ufo3"]
 tile_data = PackedInt32Array(0, 1179648, 9, 65536, 1179648, 10, 1, 1245184, 9, 65537, 1245184, 10)
@@ -265,3 +266,6 @@ position = Vector2(310, -23)
 
 [node name="Frog" parent="." unique_id=361588091 instance=ExtResource("4_3lxj6")]
 position = Vector2(258, -156)
+
+[node name="Eagle" parent="." unique_id=2088383184 instance=ExtResource("5_lmtt4")]
+position = Vector2(186, -190)

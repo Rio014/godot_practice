@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://fu1pmnchjylr"]
+
+[ext_resource type="PackedScene" uid="uid://65qserbt38r" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_euo1a"]
+[ext_resource type="Texture2D" uid="uid://v0e16l0650lo" path="res://assets/enemies/eagle/eagle-attack.png" id="2_8eptn"]
+[ext_resource type="Script" uid="uid://bbt1g60kt6vfr" path="res://Scenes/Enemies/Eagle/eagle.gd" id="2_luig0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_luig0"]
+size = Vector2(31, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luig0"]
+atlas = ExtResource("2_8eptn")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4258"]
+atlas = ExtResource("2_8eptn")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhy2t"]
+atlas = ExtResource("2_8eptn")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foiie"]
+atlas = ExtResource("2_8eptn")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gs16j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_luig0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4258")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhy2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foiie")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_luig0"]
+radius = 14.57738
+
+[node name="Eagle" unique_id=286677555 instance=ExtResource("1_euo1a")]
+collision_mask = 0
+script = ExtResource("2_luig0")
+fly_speed = Vector2(35, 15)
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1640160501]
+visible = false
+position = Vector2(-2.5, 4)
+shape = SubResource("RectangleShape2D_luig0")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1694421320]
+sprite_frames = SubResource("SpriteFrames_gs16j")
+animation = &"fly"
+frame = 2
+frame_progress = 0.37141553
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1009484158) index="0" unique_id=2032664923]
+position = Vector2(-5, 6)
+shape = SubResource("CircleShape2D_luig0")
+
+[node name="PlayerDetectRayCast" type="RayCast2D" parent="." index="4" unique_id=1611352973]
+target_position = Vector2(0, 300)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="DirectionTimer" type="Timer" parent="." index="5" unique_id=1903157931]
+wait_time = 3.0
+
+[connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
