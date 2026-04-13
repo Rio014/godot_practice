@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b77rxcam67mfn"]
+
+[ext_resource type="Script" uid="uid://cismhna7yfqid" path="res://Scenes/BulletBase/bullet_base.gd" id="1_0etr7"]
+[ext_resource type="PackedScene" uid="uid://cgv0a7mek03w3" path="res://Scenes/LifeTimer/LifeTimer.tscn" id="1_pi2vc"]
+
+[node name="BulletBase" type="Area2D" unique_id=2135397245]
+script = ExtResource("1_0etr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1085832498]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1898498079]
+
+[node name="LifeTimer" parent="." unique_id=862384517 instance=ExtResource("1_pi2vc")]
