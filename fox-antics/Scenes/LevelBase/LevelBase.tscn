@@ -264,4 +264,4 @@ position = Vector2(88, -36)
 position = Vector2(310, -23)
 
 [node name="Frog" parent="." unique_id=361588091 instance=ExtResource("4_3lxj6")]
-position = Vector2(186, -76)
+position = Vector2(258, -156)

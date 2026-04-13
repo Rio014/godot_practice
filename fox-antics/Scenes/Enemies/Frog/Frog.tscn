@@ -87,3 +87,8 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1009484158) index="0" unique_id=2032664923]
 shape = SubResource("RectangleShape2D_yjng5")
+
+[node name="JumpTimer" type="Timer" parent="." index="4" unique_id=1517025849]
+one_shot = true
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_timer_timeout"]
