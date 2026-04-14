@@ -4,10 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://cgv0a7mek03w3" path="res://Scenes/LifeTimer/LifeTimer.tscn" id="1_pi2vc"]
 
 [node name="BulletBase" type="Area2D" unique_id=2135397245]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_0etr7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1085832498]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1898498079]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1085832498]
+
 [node name="LifeTimer" parent="." unique_id=862384517 instance=ExtResource("1_pi2vc")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
