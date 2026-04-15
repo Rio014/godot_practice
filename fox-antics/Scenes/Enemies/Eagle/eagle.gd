@@ -16,6 +16,8 @@ start direction timer when eagle sees the player
 
 @onready var direction_timer: Timer = $DirectionTimer
 @onready var player_detect_ray_cast: RayCast2D = $PlayerDetectRayCast
+@onready var shooter: Shooter = $Shooter
+
 
 var _fly_direction: Vector2 = Vector2.ZERO
 
@@ -66,4 +68,6 @@ func _on_direction_timer_timeout() -> void:
 
 func shoot() -> void:
 	if player_detect_ray_cast.is_colliding():
-		print("shoot")
+		#print("eagle shoot")
+		var dir: Vector2 = global_position.direction_to(_player_ref.global_position)
+		shooter.shoot(dir)

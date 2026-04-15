@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	# this will be called everytime we see the frog (multiple "on screen" print), but we only want it to start once
-	print("ON SCREEN") 
+	#print("ON SCREEN") 
 	
 	# to prevent this, we have this if checking
 	if seen_player == false:
@@ -62,7 +62,7 @@ func flip_frog() -> void:
 
 func _on_timer_timeout() -> void:
 	can_jump = true
-	print("frog jump!!")
+	#print("frog jump!!")
 	apply_jump()
 
 

@@ -13,6 +13,10 @@ const MAX_FALL_VELOCITY: float = 350.0
 @onready var debug_label: Label = $DebugLabel
 
 
+@onready var shooter: Shooter = $Shooter
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -35,6 +39,16 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y += JUMP_SPEED # not multiply delta since move_and_slide() already handled that
+		
+	# test shooting (delete later)
+	if  event.is_action_pressed("shoot"):
+		var dir: Vector2
+		if sprite_2d.flip_h == true:
+			dir = Vector2.LEFT
+		else:
+			dir = Vector2.RIGHT
+		shooter.shoot(dir)
+		#print("SHOOT FROM PLAYER")
 		
 
 func player_move() -> void:
