@@ -8,6 +8,8 @@
 radius = 4.1231055
 
 [node name="PlayerBullet" unique_id=2135397245 instance=ExtResource("1_7edml")]
+collision_layer = 4
+collision_mask = 8
 script = ExtResource("2_f306r")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1898498079]
