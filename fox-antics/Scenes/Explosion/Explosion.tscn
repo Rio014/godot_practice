@@ -50,11 +50,12 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [node name="Explosion" type="AnimatedSprite2D" unique_id=99177593]
 sprite_frames = SubResource("SpriteFrames_6f574")
+autoplay = "default"
 frame = 5
 frame_progress = 1.0
 script = ExtResource("2_me2ut")
