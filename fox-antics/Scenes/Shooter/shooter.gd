@@ -27,6 +27,7 @@ func shoot(direction: Vector2) -> void:
 		#print("%s shooter shot direction: %s" % [get_parent(), direction])
 		# start timer
 		shoot_timer.start()
+		shoot_sound.play()
 	else:
 		return
 

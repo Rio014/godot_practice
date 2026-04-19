@@ -14,6 +14,7 @@ const MAX_FALL_VELOCITY: float = 350.0
 
 
 @onready var shooter: Shooter = $Shooter
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
 
 
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y += JUMP_SPEED # not multiply delta since move_and_slide() already handled that
+		jump_sound.play()
 		
 	# test shooting (delete later)
 	if  event.is_action_pressed("shoot"):

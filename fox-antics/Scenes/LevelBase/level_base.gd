@@ -5,6 +5,10 @@ const ENEMY_BULLET = preload("res://Scenes/Bullets/EnemyBullet/EnemyBullet.tscn"
 const SHOOTER = preload("res://Scenes/Shooter/Shooter.tscn")
 
 @onready var player: Player = $Player
+@onready var bg_music: AudioStreamPlayer = $BGMusic
+
+func _ready() -> void:
+	bg_music.play()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):

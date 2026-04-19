@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bb4626t13ar4d" path="res://assets/player/player.png" id="1_s0eop"]
 [ext_resource type="PackedScene" uid="uid://c34tcfca41bh4" path="res://Scenes/PlayerCam/PlayerCam.tscn" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://dwvntd5wdwycv" path="res://Scenes/Shooter/Shooter.tscn" id="4_ude3g"]
+[ext_resource type="AudioStream" uid="uid://c0esc5pejr7pa" path="res://assets/sound/jump.wav" id="5_jmcll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s0eop"]
 radius = 7.0
@@ -244,3 +245,6 @@ shape = SubResource("CapsuleShape2D_h54ih")
 
 [node name="Shooter" parent="." unique_id=1679431554 instance=ExtResource("4_ude3g")]
 speed = 250.0
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=597140727]
+stream = ExtResource("5_jmcll")
