@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c1x11suqh7ksx"]
+
+[ext_resource type="Texture2D" uid="uid://tutwjl224bvo" path="res://assets/backgrounds/game_background_3/game_background_3. 2.png" id="1_p8rbg"]
+[ext_resource type="FontFile" uid="uid://cibm8stnrhxg0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_cmk6n"]
+[ext_resource type="AudioStream" uid="uid://cvsvwv6gul7tk" path="res://assets/sound/Farm Frolics.ogg" id="3_i3fi7"]
+[ext_resource type="PackedScene" uid="uid://cowj1gxugeh7d" path="res://Scenes/HighScoreDisplay/HighScoreDisplayVBox.tscn" id="4_i3fi7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8wgc"]
+font = ExtResource("2_cmk6n")
+font_size = 108
+font_color = Color(0.9605381, 0.69806975, 0.4201781, 1)
+outline_size = 20
+outline_color = Color(0.6706947, 0.42829198, 0.13139719, 1)
+
+[node name="Main" type="Control" unique_id=1762993539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=303178053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p8rbg")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=200043052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20392157, 0.20392157, 0.20392157, 0.3019608)
+
+[node name="Label" type="Label" parent="." unique_id=1025181998]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -11.5
+offset_right = 45.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "FOXY ANTICS"
+label_settings = SubResource("LabelSettings_o8wgc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2111287889]
+stream = ExtResource("3_i3fi7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=264072201]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -483.0
+offset_top = -144.0
+offset_right = 483.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=10674677]
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 7
+columns = 5
+
+[node name="HighScoreDisplayVBox" parent="MarginContainer/GridContainer" unique_id=850267872 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox2" parent="MarginContainer/GridContainer" unique_id=1569874308 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox3" parent="MarginContainer/GridContainer" unique_id=1354931146 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox4" parent="MarginContainer/GridContainer" unique_id=1063283839 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox5" parent="MarginContainer/GridContainer" unique_id=217814054 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox6" parent="MarginContainer/GridContainer" unique_id=138098132 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox7" parent="MarginContainer/GridContainer" unique_id=946122814 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox8" parent="MarginContainer/GridContainer" unique_id=1222244763 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox9" parent="MarginContainer/GridContainer" unique_id=12149762 instance=ExtResource("4_i3fi7")]
+layout_mode = 2
+
+[node name="HighScoreDisplayVBox10" parent="MarginContainer/GridContainer" unique_id=2046758058 instance=ExtResource("4_i3fi7")]
+layout_mode = 2

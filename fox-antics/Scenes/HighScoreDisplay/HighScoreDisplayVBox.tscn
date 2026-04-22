@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cowj1gxugeh7d"]
+
+[ext_resource type="LabelSettings" uid="uid://bakhxob4gid30" path="res://Resources/Main_score.tres" id="1_o7dre"]
+
+[node name="HighScoreDisplayVBox" type="VBoxContainer" unique_id=850267872]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelScore" type="Label" parent="." unique_id=931351284]
+layout_mode = 2
+text = "SCORE"
+label_settings = ExtResource("1_o7dre")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTime" type="Label" parent="." unique_id=2126771718]
+layout_mode = 2
+text = "02/10/2026"
+label_settings = ExtResource("1_o7dre")
+horizontal_alignment = 1
+vertical_alignment = 1
