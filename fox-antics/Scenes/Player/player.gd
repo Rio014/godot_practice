@@ -25,6 +25,7 @@ const DAMAGE = preload("res://assets/sound/damage.wav")
 
 
 var is_hurt: bool = false
+var is_invincible: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -85,7 +86,21 @@ func debug_show() -> void:
 	debug_str = "Floor: %s\nvelocity:%s\nglobal_pos:%s" % [is_on_floor(), velocity, global_position]
 	debug_label.text = debug_str
 
+func go_invincible() -> void:
+	is_invincible = true
+	
+	# flash for short duration
+	var tween: Tween = create_tween()
+	for i in range(3): # flashing a total of 3 seconds
+		tween.tween_property(sprite_2d, "modulate", Color("ffffff", 0.0), 0.5) # transparent
+		tween.tween_property(sprite_2d, "modulate", Color("ffffff", 1.0), 0.5)
+	tween.tween_property(self, "is_invincible", false, 0)
+
 func apply_hit() -> void:
+	if is_invincible:
+		return
+	
+	go_invincible()
 	apply_hurt_jump()
 	
 func apply_hurt_jump() -> void:
