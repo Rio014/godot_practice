@@ -4,7 +4,7 @@
 
 [resource]
 font = ExtResource("1_ocen2")
-font_size = 32
-font_color = Color(0, 0.88426024, 0.8890335, 1)
+font_size = 24
+font_color = Color(0.61897475, 0.9990023, 0.9999998, 1)
 outline_size = 10
 outline_color = Color(1.4439226e-07, 0.3502719, 0.35302827, 1)

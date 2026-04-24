@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cowj1gxugeh7d"]
 
 [ext_resource type="LabelSettings" uid="uid://bakhxob4gid30" path="res://Resources/Main_score.tres" id="1_o7dre"]
+[ext_resource type="Script" uid="uid://bv3hhjii66qay" path="res://Scenes/HighScoreDisplay/high_score_display_v_box.gd" id="1_vp7sk"]
 
 [node name="HighScoreDisplayVBox" type="VBoxContainer" unique_id=850267872]
+modulate = Color(1, 1, 1, 0)
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_vp7sk")
 
 [node name="LabelScore" type="Label" parent="." unique_id=931351284]
 layout_mode = 2
