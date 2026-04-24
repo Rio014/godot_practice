@@ -35,6 +35,9 @@ func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 
 # enemy can only be damaged by the bullet from the player, so that's why we use area entered here
 func _on_hitbox_area_entered(area: Area2D) -> void:
+	#  increase score
+	SignalHub.emit_on_increase_score(points)
+	
 	SignalHub.emit_on_create_object(global_position, Constants.ObjectType.EXPLOSION)
 	SignalHub.emit_on_create_object(global_position, Constants.ObjectType.PICKUP)
 	die()

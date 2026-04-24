@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xhdak0ae261u"]
 
 [ext_resource type="FontFile" uid="uid://cibm8stnrhxg0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_vvs1i"]
+[ext_resource type="Script" uid="uid://pqegyti0mvth" path="res://Scenes/Hud/hud.gd" id="1_xymhr"]
 [ext_resource type="Texture2D" uid="uid://cilxoqt3sj42g" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iteex"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xymhr")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1750547410]
 layout_mode = 1

@@ -15,5 +15,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		#var new_bullet: Area2D = ENEMY_BULLET.instantiate()
 		#player.add_child(new_bullet)
 		pass
-	elif Input.is_key_pressed(KEY_ESCAPE):
-		GameManager.load_main()
