@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://fu1pmnchjylr" path="res://Scenes/Enemies/Eagle/Eagle.tscn" id="5_lmtt4"]
 [ext_resource type="PackedScene" uid="uid://s0d1htuu0b05" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="7_txgif"]
 [ext_resource type="AudioStream" uid="uid://ri2wx772rlq0" path="res://assets/sound/Flowing Rocks.ogg" id="8_o536s"]
+[ext_resource type="PackedScene" uid="uid://xhdak0ae261u" path="res://Scenes/Hud/Hud.tscn" id="9_dufl6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ufo3"]
 tile_data = PackedInt32Array(0, 1179648, 9, 65536, 1179648, 10, 1, 1245184, 9, 65537, 1245184, 10)
@@ -280,3 +281,7 @@ position = Vector2(186, -190)
 stream = ExtResource("8_o536s")
 volume_db = -10.0
 parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=282794965]
+
+[node name="Hud" parent="CanvasLayer" unique_id=525980759 instance=ExtResource("9_dufl6")]

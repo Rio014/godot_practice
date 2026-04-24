@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://xhdak0ae261u"]
+
+[ext_resource type="FontFile" uid="uid://cibm8stnrhxg0" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_vvs1i"]
+[ext_resource type="Texture2D" uid="uid://cilxoqt3sj42g" path="res://assets/items/pixel heart 2.png" id="2_iteex"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iteex"]
+font = ExtResource("1_vvs1i")
+font_size = 48
+font_color = Color(0.97501177, 0.976458, 0.99704295, 1)
+outline_size = 10
+outline_color = Color(1.4439226e-07, 0.3502719, 0.35302827, 1)
+
+[node name="Hud" type="Control" unique_id=525980759]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1750547410]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=197788233]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "00000"
+label_settings = SubResource("LabelSettings_iteex")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=696669411]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Heart1" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1371417232]
+layout_mode = 2
+texture = ExtResource("2_iteex")
+stretch_mode = 4
+
+[node name="Heart2" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1235133577]
+layout_mode = 2
+texture = ExtResource("2_iteex")
+stretch_mode = 4
+
+[node name="Heart3" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1419483971]
+layout_mode = 2
+texture = ExtResource("2_iteex")
+stretch_mode = 4
+
+[node name="Heart4" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1489699528]
+layout_mode = 2
+texture = ExtResource("2_iteex")
+stretch_mode = 4
+
+[node name="Heart5" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=997691089]
+layout_mode = 2
+texture = ExtResource("2_iteex")
+stretch_mode = 4
