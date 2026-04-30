@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://s0d1htuu0b05" path="res://Scenes/ObjectMaker/ObjectMaker.tscn" id="7_txgif"]
 [ext_resource type="AudioStream" uid="uid://ri2wx772rlq0" path="res://assets/sound/Flowing Rocks.ogg" id="8_o536s"]
 [ext_resource type="PackedScene" uid="uid://xhdak0ae261u" path="res://Scenes/Hud/Hud.tscn" id="9_dufl6"]
+[ext_resource type="PackedScene" uid="uid://kgqo7h7pui1t" path="res://Scenes/BallSpikes/BallSpikes.tscn" id="10_hcoko"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ufo3"]
 tile_data = PackedInt32Array(0, 1179648, 9, 65536, 1179648, 10, 1, 1245184, 9, 65537, 1245184, 10)
@@ -255,6 +256,12 @@ terrain_set_0/terrain_0/color = Color(0.2095848, 0.41068634, 0.49857962, 1)
 sources/0 = SubResource("TileSetAtlasSource_bgw71")
 pattern_0 = SubResource("TileMapPattern_5ufo3")
 
+[sub_resource type="Curve2D" id="Curve2D_dufl6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 360, -69, -64.05197, 39.581745, 64.05197, -39.581745, 341, -116, 0, 0, 0, 0, 296, -180, 23.129879, -49.963844, -23.129879, 49.963844, 235, -192, 0, 0, 0, 0, 187, -157, 0, 0, 0, 0, 163, -128, 114.75978, 47.36832, -114.75978, -47.36832, 180.336, -57.50466, 0, 0, 0, 0, 360, -69)
+}
+point_count = 8
+
 [node name="LevelBase" type="Node2D" unique_id=2064968389]
 script = ExtResource("1_txgif")
 
@@ -285,3 +292,13 @@ parameters/looping = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=282794965]
 
 [node name="Hud" parent="CanvasLayer" unique_id=525980759 instance=ExtResource("9_dufl6")]
+
+[node name="BallSpikesHolder" type="Node" parent="." unique_id=1529452392]
+
+[node name="Path2D" type="Path2D" parent="BallSpikesHolder" unique_id=35631720]
+position = Vector2(59.5736, -24.975616)
+scale = Vector2(0.6345178, 0.8699187)
+curve = SubResource("Curve2D_dufl6")
+
+[node name="BallSpikes" parent="BallSpikesHolder/Path2D" unique_id=238065117 instance=ExtResource("10_hcoko")]
+position = Vector2(360, -69)

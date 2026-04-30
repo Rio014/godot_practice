@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://kgqo7h7pui1t"]
+
+[ext_resource type="Script" uid="uid://iv2gtudxso6" path="res://Scenes/BallSpikes/ball_spikes.gd" id="1_55els"]
+[ext_resource type="Texture2D" uid="uid://con326nu6fqag" path="res://assets/danger/spiked_ball.png" id="1_ao3fp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ao3fp"]
+radius = 12.0
+
+[node name="BallSpikes" type="PathFollow2D" unique_id=238065117]
+rotates = false
+script = ExtResource("1_55els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=104739256]
+texture = ExtResource("1_ao3fp")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=936061120]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1576714438]
+shape = SubResource("CircleShape2D_ao3fp")
